@@ -3,10 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Taste of Georgia</title>
+  
+  <!-- Primary SEO -->
+  <title>Taste of Georgia | Georgian Wine, Food & Travel Guide</title>
+  <meta name="description" content="Discover the flavors of Georgia. Explore Georgian wine from Kakheti, traditional food, and travel guides to Svaneti, Adjara, Racha and more. Your complete guide to visiting Georgia.">
+  <meta name="keywords" content="Taste of Georgia, Georgian wine, Georgia travel, visit Georgia, Kakheti wine, Georgian food, Svaneti, Adjara, Racha, Khachapuri, Khinkali, Saperavi, Georgia tourism">
+  <meta name="author" content="Giga Motskobili">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://taste-of-georgia.netlify.app/">
+  <meta property="og:title" content="Taste of Georgia | Georgian Wine, Food & Travel Guide">
+  <meta property="og:description" content="Discover the flavors of Georgia. Explore Georgian wine, traditional food, and the best regions to visit — Kakheti, Svaneti, Adjara and more.">
+  <meta property="og:site_name" content="Taste of Georgia">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Taste of Georgia | Georgian Wine, Food & Travel Guide">
+  <meta name="twitter:description" content="Discover Georgian wine, food and travel destinations across the Republic of Georgia.">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://taste-of-georgia.netlify.app/">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  
   <style>
     :root {
       --bg: #0c0c0c;
@@ -37,7 +60,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Header */
     header {
       position: fixed;
       top: 0;
@@ -51,7 +73,6 @@
       background: rgba(12, 12, 12, 0.8);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
-      transition: padding 0.3s;
     }
 
     .logo {
@@ -84,7 +105,6 @@
       color: var(--text);
     }
 
-    /* Hero */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -132,7 +152,7 @@
     .hero p {
       font-size: 1.15rem;
       color: var(--text-muted);
-      max-width: 480px;
+      max-width: 520px;
       margin-bottom: 2.8rem;
       font-weight: 300;
     }
@@ -161,7 +181,6 @@
       height: 16px;
     }
 
-    /* Sections */
     section {
       padding: 6rem 3rem;
       max-width: 1200px;
@@ -191,11 +210,10 @@
 
     .section-desc {
       color: var(--text-muted);
-      max-width: 480px;
+      max-width: 520px;
       font-weight: 300;
     }
 
-    /* Regions */
     .regions-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -208,8 +226,6 @@
       border-radius: 20px;
       padding: 2.2rem;
       transition: all 0.35s ease;
-      position: relative;
-      overflow: hidden;
     }
 
     .region-card:hover {
@@ -229,7 +245,6 @@
       font-size: 1.5rem;
       font-weight: 600;
       margin-bottom: 0.7rem;
-      letter-spacing: -0.01em;
     }
 
     .region-card p {
@@ -256,7 +271,6 @@
       border: 1px solid rgba(201,168,108,0.15);
     }
 
-    /* Flavors */
     .flavors-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -300,7 +314,6 @@
       font-size: 0.9rem;
     }
 
-    /* Contact */
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -345,7 +358,6 @@
       color: var(--gold);
     }
 
-    /* CTA */
     .cta-section {
       padding: 4rem 3rem 7rem;
     }
@@ -382,7 +394,6 @@
       font-weight: 300;
     }
 
-    /* Footer */
     footer {
       border-top: 1px solid var(--border);
       padding: 2.5rem 3rem;
@@ -399,7 +410,6 @@
       text-decoration: none;
     }
 
-    /* Responsive */
     @media (max-width: 900px) {
       header {
         padding: 1.2rem 1.5rem;
@@ -443,7 +453,7 @@
   <section class="hero">
     <div class="hero-label">Republic of Georgia</div>
     <h1>Discover the<br><span>flavors</span> of the land</h1>
-    <p>From the wine valleys of Kakheti to the mountain kitchens of Svaneti — explore Georgia region by region through its food, wine, and traditions.</p>
+    <p>From the wine valleys of Kakheti to the mountain kitchens of Svaneti — explore Georgia region by region through its food, wine, and traditions. Your guide to Georgian wine, food and travel.</p>
     <a href="#regions" class="btn">
       Explore the regions
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -453,15 +463,15 @@
   <section id="regions">
     <div class="section-header">
       <div class="section-label">Territories</div>
-      <h2>Georgia by region</h2>
-      <p class="section-desc">Each part of the country has its own landscape, climate, and kitchen.</p>
+      <h2>Georgia by region – Travel & Wine Guide</h2>
+      <p class="section-desc">Each part of the country has its own landscape, climate, and kitchen. Discover the best places to visit in Georgia.</p>
     </div>
 
     <div class="regions-grid">
       <div class="region-card">
         <span class="region-emoji">🍷</span>
-        <h3>Kakheti</h3>
-        <p>The heart of Georgian wine. Endless vineyards, ancient qvevri cellars, and long supra tables filled with generosity.</p>
+        <h3>Kakheti – Georgian Wine Region</h3>
+        <p>The heart of Georgian wine. Endless vineyards, ancient qvevri cellars, and long supra tables filled with generosity. Best place for wine tasting in Georgia.</p>
         <div class="tags">
           <span class="tag">Saperavi</span>
           <span class="tag">Rkatsiteli</span>
@@ -471,8 +481,8 @@
 
       <div class="region-card">
         <span class="region-emoji">🏔️</span>
-        <h3>Svaneti</h3>
-        <p>High Caucasus towers and hearty mountain food. Kubdari, local cheeses, and wild herbs grown in the thin air.</p>
+        <h3>Svaneti – Mountain Georgia</h3>
+        <p>High Caucasus towers and hearty mountain food. Kubdari, local cheeses, and wild herbs grown in the thin air. Perfect for hiking and culture.</p>
         <div class="tags">
           <span class="tag">Kubdari</span>
           <span class="tag">Svan salt</span>
@@ -482,8 +492,8 @@
 
       <div class="region-card">
         <span class="region-emoji">🌊</span>
-        <h3>Adjara</h3>
-        <p>Black Sea coast and the famous boat-shaped Adjarian khachapuri finished with a golden egg yolk.</p>
+        <h3>Adjara – Black Sea Coast</h3>
+        <p>Black Sea coast and the famous boat-shaped Adjarian khachapuri finished with a golden egg yolk. Great for summer travel in Georgia.</p>
         <div class="tags">
           <span class="tag">Adjarian Khachapuri</span>
           <span class="tag">Sinori</span>
@@ -494,7 +504,7 @@
       <div class="region-card">
         <span class="region-emoji">🌿</span>
         <h3>Racha-Lechkhumi</h3>
-        <p>Forest-covered hills, smoked meats, and the rare semi-sweet Khvanchkara wine loved across the country.</p>
+        <p>Forest-covered hills, smoked meats, and the rare semi-sweet Khvanchkara wine loved across the country. Hidden gem for Georgian food lovers.</p>
         <div class="tags">
           <span class="tag">Khvanchkara</span>
           <span class="tag">Lori</span>
@@ -507,13 +517,13 @@
   <section id="flavors">
     <div class="section-header">
       <div class="section-label">Essentials</div>
-      <h2>Signature flavors</h2>
-      <p class="section-desc">A few dishes and wines that define Georgian hospitality.</p>
+      <h2>Georgian Food & Wine</h2>
+      <p class="section-desc">A few dishes and wines that define Georgian hospitality and culture.</p>
     </div>
 
     <div class="flavors-grid">
       <div class="flavor-card">
-        <h3>Must-try dishes</h3>
+        <h3>Must-try Georgian dishes</h3>
         <ul class="flavor-list">
           <li>Khachapuri <span>Cheese bread</span></li>
           <li>Khinkali <span>Soup dumplings</span></li>
@@ -524,7 +534,7 @@
       </div>
 
       <div class="flavor-card">
-        <h3>Essential wines</h3>
+        <h3>Essential Georgian wines</h3>
         <ul class="flavor-list">
           <li>Saperavi <span>Deep red</span></li>
           <li>Rkatsiteli <span>Amber / white</span></li>
@@ -540,7 +550,7 @@
     <div class="section-header">
       <div class="section-label">Get in touch</div>
       <h2>Contact</h2>
-      <p class="section-desc">Have a question or want to know more about Georgia? Reach out.</p>
+      <p class="section-desc">Have a question about Georgia travel, wine or food? Reach out.</p>
     </div>
 
     <div class="contact-grid">
@@ -567,7 +577,7 @@
   <div class="cta-section" id="explore">
     <div class="cta-box">
       <div class="section-label">Next step</div>
-      <h2>Ready to taste Georgia?</h2>
+      <h2>Ready to visit Georgia?</h2>
       <p>Use this page as your starting point. Plan a wine route through Kakheti, a mountain feast in Svaneti, or a coastal escape in Adjara.</p>
       <a href="#regions" class="btn">
         Start exploring
@@ -577,7 +587,7 @@
   </div>
 
   <footer>
-    <div>Taste of Georgia · Giga Motskobili</div>
+    <div>Taste of Georgia · Giga Motskobili · Georgian Wine, Food & Travel</div>
     <div>motskobiligiga08@gmail.com</div>
   </footer>
 
