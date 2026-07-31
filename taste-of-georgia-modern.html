@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taste of Georgia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0c0c0c;
+      --bg-soft: #141414;
+      --card: #1a1a1a;
+      --text: #f5f5f5;
+      --text-muted: #a0a0a0;
+      --gold: #c9a86c;
+      --gold-soft: #e8d5a3;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1.4rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(12, 12, 12, 0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      transition: padding 0.3s;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    nav {
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.25s;
+    }
+
+    nav a:hover {
+      color: var(--text);
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8rem 3rem 6rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 60%;
+      height: 80%;
+      background: radial-gradient(circle, rgba(201,168,108,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      max-width: 800px;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 480px;
+      margin-bottom: 2.8rem;
+      font-weight: 300;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--gold);
+      color: #0c0c0c;
+      padding: 0.95rem 1.8rem;
+      border-radius: 100px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: var(--gold-soft);
+      transform: translateY(-2px);
+    }
+
+    .btn svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Sections */
+    section {
+      padding: 6rem 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      margin-bottom: 3.5rem;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      max-width: 480px;
+      font-weight: 300;
+    }
+
+    /* Regions */
+    .regions-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .region-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2.2rem;
+      transition: all 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .region-card:hover {
+      border-color: rgba(201,168,108,0.3);
+      transform: translateY(-4px);
+      background: #1f1f1f;
+    }
+
+    .region-emoji {
+      font-size: 2rem;
+      margin-bottom: 1.4rem;
+      display: block;
+    }
+
+    .region-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+      letter-spacing: -0.01em;
+    }
+
+    .region-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      font-weight: 300;
+      margin-bottom: 1.4rem;
+      line-height: 1.65;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.3rem 0.75rem;
+      border-radius: 100px;
+      background: rgba(201,168,108,0.1);
+      color: var(--gold-soft);
+      border: 1px solid rgba(201,168,108,0.15);
+    }
+
+    /* Flavors */
+    .flavors-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .flavor-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2.5rem;
+    }
+
+    .flavor-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      margin-bottom: 1.8rem;
+      font-weight: 600;
+    }
+
+    .flavor-list {
+      list-style: none;
+    }
+
+    .flavor-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+    }
+
+    .flavor-list li:last-child {
+      border-bottom: none;
+    }
+
+    .flavor-list span {
+      color: var(--text-muted);
+      font-weight: 300;
+      font-size: 0.9rem;
+    }
+
+    /* CTA */
+    .cta-section {
+      padding: 4rem 3rem 7rem;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, #1a1a1a 0%, #151515 100%);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 4.5rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .cta-box h2 {
+      margin-bottom: 1rem;
+    }
+
+    .cta-box p {
+      color: var(--text-muted);
+      max-width: 420px;
+      margin: 0 auto 2.2rem;
+      font-weight: 300;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 300;
+    }
+
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      header {
+        padding: 1.2rem 1.5rem;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hero, section, .cta-section {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+
+      .regions-grid,
+      .flavors-grid {
+        grid-template-columns: 1fr;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 0.8rem;
+        text-align: center;
+        padding: 2rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="#" class="logo">Taste of <span>Georgia</span></a>
+    <nav>
+      <a href="#regions">Regions</a>
+      <a href="#flavors">Flavors</a>
+      <a href="#explore">Explore</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-label">Republic of Georgia</div>
+    <h1>Discover the<br><span>flavors</span> of the land</h1>
+    <p>From the wine valleys of Kakheti to the mountain kitchens of Svaneti — explore Georgia region by region through its food, wine, and traditions.</p>
+    <a href="#regions" class="btn">
+      Explore the regions
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </section>
+
+  <section id="regions">
+    <div class="section-header">
+      <div class="section-label">Territories</div>
+      <h2>Georgia by region</h2>
+      <p class="section-desc">Each part of the country has its own landscape, climate, and kitchen.</p>
+    </div>
+
+    <div class="regions-grid">
+      <div class="region-card">
+        <span class="region-emoji">🍷</span>
+        <h3>Kakheti</h3>
+        <p>The heart of Georgian wine. Endless vineyards, ancient qvevri cellars, and long supra tables filled with generosity.</p>
+        <div class="tags">
+          <span class="tag">Saperavi</span>
+          <span class="tag">Rkatsiteli</span>
+          <span class="tag">Churchkhela</span>
+        </div>
+      </div>
+
+      <div class="region-card">
+        <span class="region-emoji">🏔️</span>
+        <h3>Svaneti</h3>
+        <p>High Caucasus towers and hearty mountain food. Kubdari, local cheeses, and wild herbs grown in the thin air.</p>
+        <div class="tags">
+          <span class="tag">Kubdari</span>
+          <span class="tag">Svan salt</span>
+          <span class="tag">Tashmijabi</span>
+        </div>
+      </div>
+
+      <div class="region-card">
+        <span class="region-emoji">🌊</span>
+        <h3>Adjara</h3>
+        <p>Black Sea coast and the famous boat-shaped Adjarian khachapuri finished with a golden egg yolk.</p>
+        <div class="tags">
+          <span class="tag">Adjarian Khachapuri</span>
+          <span class="tag">Sinori</span>
+          <span class="tag">Citrus</span>
+        </div>
+      </div>
+
+      <div class="region-card">
+        <span class="region-emoji">🌿</span>
+        <h3>Racha-Lechkhumi</h3>
+        <p>Forest-covered hills, smoked meats, and the rare semi-sweet Khvanchkara wine loved across the country.</p>
+        <div class="tags">
+          <span class="tag">Khvanchkara</span>
+          <span class="tag">Lori</span>
+          <span class="tag">Shkmeruli</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="flavors">
+    <div class="section-header">
+      <div class="section-label">Essentials</div>
+      <h2>Signature flavors</h2>
+      <p class="section-desc">A few dishes and wines that define Georgian hospitality.</p>
+    </div>
+
+    <div class="flavors-grid">
+      <div class="flavor-card">
+        <h3>Must-try dishes</h3>
+        <ul class="flavor-list">
+          <li>Khachapuri <span>Cheese bread</span></li>
+          <li>Khinkali <span>Soup dumplings</span></li>
+          <li>Mtsvadi <span>Grilled meat</span></li>
+          <li>Pkhali <span>Vegetable pâtés</span></li>
+          <li>Churchkhela <span>Walnut candy</span></li>
+        </ul>
+      </div>
+
+      <div class="flavor-card">
+        <h3>Essential wines</h3>
+        <ul class="flavor-list">
+          <li>Saperavi <span>Deep red</span></li>
+          <li>Rkatsiteli <span>Amber / white</span></li>
+          <li>Khvanchkara <span>Semi-sweet</span></li>
+          <li>Kindzmarauli <span>Semi-sweet red</span></li>
+          <li>Tsinandali <span>Classic white</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-section" id="explore">
+    <div class="cta-box">
+      <div class="section-label">Next step</div>
+      <h2>Ready to taste Georgia?</h2>
+      <p>Use this page as your starting point. Plan a wine route through Kakheti, a mountain feast in Svaneti, or a coastal escape in Adjara.</p>
+      <a href="#regions" class="btn">
+        Start exploring
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <div>Taste of Georgia · Republic of Georgia</div>
+    <div>Made with care</div>
+  </footer>
+
+</body>
+</html>
