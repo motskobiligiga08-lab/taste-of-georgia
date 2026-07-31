@@ -300,6 +300,51 @@
       font-size: 0.9rem;
     }
 
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .contact-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2.2rem;
+      text-align: center;
+      transition: all 0.35s ease;
+    }
+
+    .contact-card:hover {
+      border-color: rgba(201,168,108,0.3);
+      transform: translateY(-4px);
+    }
+
+    .contact-icon {
+      font-size: 1.8rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .contact-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      margin-bottom: 0.6rem;
+      font-weight: 600;
+    }
+
+    .contact-card a, .contact-card p {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 300;
+      transition: color 0.25s;
+    }
+
+    .contact-card a:hover {
+      color: var(--gold);
+    }
+
     /* CTA */
     .cta-section {
       padding: 4rem 3rem 7rem;
@@ -370,7 +415,8 @@
       }
 
       .regions-grid,
-      .flavors-grid {
+      .flavors-grid,
+      .contact-grid {
         grid-template-columns: 1fr;
       }
 
@@ -390,7 +436,7 @@
     <nav>
       <a href="#regions">Regions</a>
       <a href="#flavors">Flavors</a>
-      <a href="#explore">Explore</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
@@ -490,6 +536,34 @@
     </div>
   </section>
 
+  <section id="contact">
+    <div class="section-header">
+      <div class="section-label">Get in touch</div>
+      <h2>Contact</h2>
+      <p class="section-desc">Have a question or want to know more about Georgia? Reach out.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon">👤</div>
+        <h3>Name</h3>
+        <p>Giga Motskobili</p>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon">✉️</div>
+        <h3>Email</h3>
+        <a href="mailto:motskobiligiga08@gmail.com">motskobiligiga08@gmail.com</a>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon">📞</div>
+        <h3>Phone</h3>
+        <a href="tel:+995593902052">+995 593 902 052</a>
+      </div>
+    </div>
+  </section>
+
   <div class="cta-section" id="explore">
     <div class="cta-box">
       <div class="section-label">Next step</div>
@@ -503,8 +577,8 @@
   </div>
 
   <footer>
-    <div>Taste of Georgia · Republic of Georgia</div>
-    <div>Made with care</div>
+    <div>Taste of Georgia · Giga Motskobili</div>
+    <div>motskobiligiga08@gmail.com</div>
   </footer>
 
 </body>
